@@ -45,7 +45,7 @@ class StaticTexts {
      */
     static String getAboutText(){
         return  "PALGA Protocol Codebook to XML was designed and created by:" +
-                "\n\tSander de Ridder (NKI 2017; VUmc 2018/2019/2020)\n"+
+                "\n\tSander de Ridder (NKI 2017; VUmc 2018/2019/2020/2021)"+
                 "\n\tJeroen Belien (VUmc)\n" +
                 "Testers & Consultants:" +
                 "\n\tMaarten Ligtvoet (Nictiz)" +
@@ -53,7 +53,7 @@ class StaticTexts {
                 "\n\tElze de Groot (Nictiz)" +
                 "This project was sponsored by MLDS project OPSLAG and KWF project TraIT2Health-RI (WP: Registry-in-a-Box)\n\n" +
                 "---------------------------------------------------------------------------------------------------------------------------------------------------------\n\n"+
-                "Copyright 2017 NKI / AvL; 2018/2019/2020 VUmc\n" +
+                "Copyright 2017 NKI / AvL; 2018/2019/2020/2021 VUmc\n" +
                 "\n" +
                 "PALGA Protocol Codebook to XML is free software: you can redistribute it and/or modify\n" +
                 "it under the terms of the GNU General Public License as published by\n" +

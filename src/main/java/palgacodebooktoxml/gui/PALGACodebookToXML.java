@@ -131,7 +131,7 @@ public class PALGACodebookToXML extends Application {
         // create an imageview for RIB image
         ImageView ribImv = new ImageView();
         ribImv.setFitHeight(90);
-        ribImv.setFitWidth(162);
+        ribImv.setFitWidth(90);
         ribImv.setImage(resourceManager.getResourceImage("rib.png"));
 
         HBox rightHBox = new HBox();
