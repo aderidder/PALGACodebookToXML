@@ -23,13 +23,13 @@ package palgacodebooktoxml.artdecor;
  * Links a concept to a codesystem and code via the terminology association tag
  */
 public class ArtDecorTerminologyConcept {
-    private String artdecorConceptId;
-    private String conceptFlexibility;
-    private String code;
-    private String codeSystemName;
-    private String codeSystemId;
-    private String displayName;
-    private String effectiveDate;
+    private final String artdecorConceptId;
+    private final String conceptFlexibility;
+    private final String code;
+    private final String codeSystemName;
+    private final String codeSystemId;
+    private final String displayName;
+    private final String effectiveDate;
 
     /**
      * constructor to create an ART-DECOR terminology concept

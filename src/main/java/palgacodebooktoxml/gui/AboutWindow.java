@@ -37,7 +37,7 @@ import javafx.stage.StageStyle;
  * The About Window
  */
 class AboutWindow {
-    private static ResourceManager resourceManager = new ResourceManager();
+    private static final ResourceManager resourceManager = new ResourceManager();
     private static Dialog dialog;
     private static final double prefWidth = 675;
     private static final double prefHeigth = 400;

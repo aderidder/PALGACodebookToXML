@@ -36,7 +36,7 @@ import java.util.*;
 public class CodebookManager {
     private static final Logger logger = LogManager.getLogger(CodebookManager.class.getName());
 //    private Map<Integer, Codebook> codebookMap = new TreeMap<>();
-    private Map<Double, Codebook> codebookMap = new TreeMap<>();
+    private final Map<Double, Codebook> codebookMap = new TreeMap<>();
 
     private CodebookManager(){}
 

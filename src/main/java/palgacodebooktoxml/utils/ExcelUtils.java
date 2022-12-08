@@ -58,7 +58,7 @@ public class ExcelUtils {
      * @return  list representation of the row
      */
     public static List<String> getRowAsList(Row row){
-        List<String> list = new ArrayList();
+        List<String> list = new ArrayList<>();
         for(Cell cell:row){
             list.add(cell.getStringCellValue().toLowerCase());
         }

@@ -42,28 +42,28 @@ import java.util.*;
  * new one, with the date again reflecting when the set is in use
  */
 public class CodebookToArtDecorConvertor {
-    private CodebookManager codebookManager;
+    private final CodebookManager codebookManager;
 
-    private ArtDecorProject artDecorProject;
+    private final ArtDecorProject artDecorProject;
 
     // maps for keeping track of the most current versions of concepts and valuesets, which allow us to easily
     // compare the new version against a previous version
-    private Map<String, ArtDecorConcept> artDecorConceptMap = new HashMap<>();
-    private Map<String, ArtDecorValueSet> artDecorValueSetMap = new HashMap<>();
+    private final Map<String, ArtDecorConcept> artDecorConceptMap = new HashMap<>();
+    private final Map<String, ArtDecorValueSet> artDecorValueSetMap = new HashMap<>();
     private Map<String, ArtDecorValueSet> artDecorChangedValueSetMap;
 
     // keeps track of the current ArtDecorConceptListId for a conceptId, allowing us to reuse the conceptListId for inheritence
-    private Map<String, String> conceptIdToArtDecorConceptListIdMap = new HashMap<>();
+    private final Map<String, String> conceptIdToArtDecorConceptListIdMap = new HashMap<>();
     // keeps track of the current ArtDecorConceptId for a conceptId, allowing us to reuse the conceptListId for inheritence
-    private Map<String, String> conceptIdToArtDecorConceptIdMap = new HashMap<>();
+    private final Map<String, String> conceptIdToArtDecorConceptIdMap = new HashMap<>();
 
     // track all the object we need to print
-    private List<ArtDecorDataset> artDecorDatasetList = new ArrayList<>();
-    private List<ArtDecorTerminologyConcept> artDecorTerminologyConceptList = new ArrayList<>();
-    private List<ArtDecorTerminologyValueSet> artDecorTerminologyValueSetList = new ArrayList<>();
-    private List<ArtDecorValueSet> artDecorValueSetList = new ArrayList<>();
+    private final List<ArtDecorDataset> artDecorDatasetList = new ArrayList<>();
+    private final List<ArtDecorTerminologyConcept> artDecorTerminologyConceptList = new ArrayList<>();
+    private final List<ArtDecorTerminologyValueSet> artDecorTerminologyValueSetList = new ArrayList<>();
+    private final List<ArtDecorValueSet> artDecorValueSetList = new ArrayList<>();
 
-    private IdentifierManager identifierManager = IdentifierManager.getIdentifierManager();
+    private final IdentifierManager identifierManager = IdentifierManager.getIdentifierManager();
 
     public CodebookToArtDecorConvertor(CodebookManager codebookManager, RunParameters runParameters){
         this.artDecorProject = new ArtDecorProject(runParameters);
@@ -219,10 +219,8 @@ public class CodebookToArtDecorConvertor {
      * valueSet has an id - lets call it the valueSetId. This id does not change! If a new valueSet is needed
      * the effectiveDate changes and the old valueSet is set to deprecated. A valueSet is the representation of
      * one set of code and options
-     *
      * the terminologyAssociation associates a conceptListId to the valueSet id. This conceptListId DOES change if
      * the lists changes
-     *
      * two concepts can use the same valueSet. In that case, both concepts have their own conceptList id which link
      * to the same valueSetId via two terminologyAssociations
      *

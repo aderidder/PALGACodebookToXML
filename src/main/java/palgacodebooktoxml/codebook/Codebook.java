@@ -49,11 +49,12 @@ class Codebook {
     private String effectiveDate;
 
     private String datasetVersionLabel="";
-    private Map<String, CodebookLanguageParameters> codebookLanguageParametersMap = new HashMap<>();
+    private final Map<String, CodebookLanguageParameters> codebookLanguageParametersMap = new HashMap<>();
 
-    private RunParameters runParameters;
+    private final RunParameters runParameters;
+    private final Map<String, Concept> conceptMap = new LinkedHashMap<>();
     private List<String> headerList;
-    private Map<String, Concept> conceptMap = new LinkedHashMap<>();
+
 
     private Codebook(RunParameters runParameters){
         this.runParameters = runParameters;
@@ -106,12 +107,10 @@ class Codebook {
      * The info sheet contains information in the following form:
      * col1 col2
      * key  value
-     *
      * e.g.
      * Version	                33
      * DatasetName_nl	        PALGA colonbiopt protocol versie 33
      * DatasetDescription_nl	Versie 33 van het PALGA colonbiopt protocol
-     *
      * This is turned into a map.
      * @param sheet the info sheet
      * @return a map with the variables in the info sheet and their values

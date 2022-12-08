@@ -39,19 +39,19 @@ import java.util.regex.Pattern;
 class Concept {
     private static final Logger logger = LogManager.getLogger(Concept.class.getName());
 
-    private String effectiveDate;
-    private String id;
-    private String codesystem;
-    private String code;
-    private String description_code;
+    private final String effectiveDate;
+    private final String id;
+    private final String codesystem;
+    private final String code;
+    private final String description_code;
     private String codelist_ref="";
-    private String parent;
-    private String data_type;
-    private String versionLabel;
-    private String statusCode;
-    private Map<String, LanguageConcept> languageConceptMap = new HashMap<>();
-    private Map<String, ConceptOption> conceptOptionsMap = new HashMap<>();
-    private Map<String, String> propertiesMap = new HashMap<>();
+    private final String parent;
+    private final String data_type;
+    private final String versionLabel;
+    private final String statusCode;
+    private final Map<String, LanguageConcept> languageConceptMap = new HashMap<>();
+    private final Map<String, ConceptOption> conceptOptionsMap = new HashMap<>();
+    private final Map<String, String> propertiesMap = new HashMap<>();
 
     /**
      * Concept in Excel constructor
@@ -175,9 +175,6 @@ class Concept {
                     addToExceptionList);
 
             // add the concept's language specific options
-
-            // TODO: this line below works but is ugly and confusing. We replaced it with the lines slightly lower
-            //  Test whether the output is the same! Should be, but test anyway!!
 //            conceptOption.addValueSetDesignations(artDecorValueSet, addToExceptionList);
 
             Collection<LanguageConceptOptions> collection = conceptOption.getLanguageConceptOptions();
@@ -288,8 +285,8 @@ class Concept {
      * Class which stores a language with the description of the codebook in that language
      */
     private static class LanguageConcept{
-        private String language;
-        private String description;
+        private final String language;
+        private final String description;
 
         LanguageConcept(String language, String description){
             this.description = description;
@@ -304,10 +301,10 @@ class Concept {
      * 2. value1	description1	snki-codesystem-1	1	    The description from the ontology for code 1
      */
     private class ConceptOption {
-        private String codesystemName;
-        private String code;
-        private String description_code;
-        private Map<String, LanguageConceptOptions> languageConceptOptionsMap = new HashMap<>();
+        private final String codesystemName;
+        private final String code;
+        private final String description_code;
+        private final Map<String, LanguageConceptOptions> languageConceptOptionsMap = new HashMap<>();
 
         /**
          * constructor
@@ -358,10 +355,10 @@ class Concept {
     /**
      * class for the language concept options
      */
-    private class LanguageConceptOptions{
-        private String language;
-        private String value;
-        private String description;
+    private static class LanguageConceptOptions{
+        private final String language;
+        private final String value;
+        private final String description;
 
         /**
          * constructor

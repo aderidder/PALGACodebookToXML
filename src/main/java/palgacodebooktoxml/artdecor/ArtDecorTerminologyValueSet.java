@@ -23,10 +23,10 @@ package palgacodebooktoxml.artdecor;
  * Links a Concept to its ValueSet in the via the terminology association tag
  */
 public class ArtDecorTerminologyValueSet {
-    private String artdecorConceptListId;
-    private String artdecorValueSetId;
-    private String flexibilityDate;
-    private String effectiveDate;
+    private final String artdecorConceptListId;
+    private final String artdecorValueSetId;
+    private final String flexibilityDate;
+    private final String effectiveDate;
 
     /**
      * constructor to create an ART-DECOR terminology value set

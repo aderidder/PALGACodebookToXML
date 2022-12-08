@@ -31,8 +31,9 @@ import javafx.stage.DirectoryChooser;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.controlsfx.control.CheckComboBox;
 
+
+import org.controlsfx.control.CheckComboBox;
 import org.controlsfx.dialog.Wizard;
 import org.controlsfx.dialog.WizardPane;
 import org.controlsfx.tools.ValueExtractor;
@@ -43,7 +44,7 @@ import org.controlsfx.validation.Validator;
 import palgacodebooktoxml.settings.RunParameters;
 import palgacodebooktoxml.settings.Statics;
 
-import javax.xml.soap.Text;
+//import javax.xml.soap.Text;
 import java.io.File;
 import java.util.*;
 import java.util.function.Predicate;
@@ -214,14 +215,14 @@ class GUIWizard {
             private TextField nrLanguagesSelectedTextField;
             private ComboBox <String> experimentalComboBox;
             private ComboBox <String> statusCodeComboBox;
-            private ComboBox <String> defaultLanguageComboBox = createComboBox("defaultLanguage", FXCollections.observableArrayList());
-            private TextArea authorsArea;
-            private TextArea copyrightArea;
+            private final ComboBox <String> defaultLanguageComboBox = createComboBox("defaultLanguage", FXCollections.observableArrayList());
+            private final TextArea authorsArea;
+            private final TextArea copyrightArea;
             private CheckComboBox<String> languageCheckComboBox;
 
-            private ValidationSupport validationSupport = new ValidationSupport();
+            private final ValidationSupport validationSupport = new ValidationSupport();
 
-            private Map<String, WizardPane> languagePageMap = new HashMap<>();
+            private final Map<String, WizardPane> languagePageMap = new HashMap<>();
 
             private Predicate isNumberPredicate = o -> Integer.valueOf(nrLanguagesSelectedTextField.getText())>0;
 
@@ -456,7 +457,7 @@ class GUIWizard {
                         // validate whether the line's third argument is in the list
                         String [] splitLine = line.split(";");
                         String contributorType = splitLine[2].trim().toLowerCase();
-                        List optionList = Arrays.asList("author", "contributor", "reviewer");
+                        List<String> optionList = Arrays.asList("author", "contributor", "reviewer");
                         if(!optionList.contains(contributorType)){
                             condition = true;
                             break;
@@ -520,7 +521,7 @@ class GUIWizard {
             private TextField projectDescription;
             private TextField projectName;
 
-            private ValidationSupport validationSupport = new ValidationSupport();
+            private final ValidationSupport validationSupport = new ValidationSupport();
 
             {
                 setId(language);
@@ -705,8 +706,8 @@ class GUIWizard {
      * the idea is that if different/more/fewer languages are selected, the user can add the
      * necessary information on newly generated pages
      */
-    class WizardFlow implements Wizard.Flow {
-        private List<WizardPane> pageList = new ArrayList<>();
+    static class WizardFlow implements Wizard.Flow {
+        private final List<WizardPane> pageList = new ArrayList<>();
 
         /**
          * create a new wizardflow. Add a page

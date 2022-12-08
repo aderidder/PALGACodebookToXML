@@ -36,20 +36,20 @@ public class IdentifierManager {
     private static IdentifierManager identifierManager;
 
     // tracks the available codesystems
-    private Map<String, CodeSystem> codeSystemMap = new LinkedHashMap<>();
+    private final Map<String, CodeSystem> codeSystemMap = new LinkedHashMap<>();
 
     private String conceptListId;
 
-    private String dataSetId;
+    private final String dataSetId;
     private int dataSetIdNext=0;
 
-    private String conceptId;
+    private final String conceptId;
     private int conceptIdNext=0;
 
-    private String valueSetId;
+    private final String valueSetId;
     private int valueSetIdNext=0;
 
-    private String codesystemId;
+    private final String codesystemId;
     private int codeSystemIdNext=0;
 
     private List<String> idList;
@@ -67,7 +67,7 @@ public class IdentifierManager {
         codesystemId = findId("codesystem")+".";
 
         codeSystemMap.put("SNOMED CT", new CodeSystem("1900-01-01T00:00:00", "2.16.840.1.113883.6.96"));
-        codeSystemMap.put("NullFlavor", new CodeSystem("1900-01-01T00:00:00","2.16.840.1.113883.5.1008"));
+        codeSystemMap.put("NullFlavor", new CodeSystem("1900-01-01T00:00:00", "2.16.840.1.113883.5.1008"));
         codeSystemMap.put("LOINC", new CodeSystem("1900-01-01T00:00:00", "2.16.840.1.113883.6.1"));
         codeSystemMap.put("HPO", new CodeSystem("1900-01-01T00:00:00", "2.16.840.1.113883.6.339"));
         codeSystemMap.put("ORPHA", new CodeSystem("1900-01-01T00:00:00", "2.16.840.1.113883.2.4.3.46.10.4.1"));
@@ -209,7 +209,7 @@ public class IdentifierManager {
         // otherwise check whether the codeySystem already exists in the table
         // if not, generate an id for it
         if(!codeSystemMap.containsKey(codeSystem)) {
-            codeSystemMap.put(codeSystem, new CodeSystem(effectiveDate, codesystemId+codeSystemIdNext++));
+            codeSystemMap.put(codeSystem, new CodeSystem(effectiveDate, codesystemId + codeSystemIdNext++));
         }
         return codeSystemMap.get(codeSystem).codeSystemId;
     }
@@ -248,9 +248,9 @@ public class IdentifierManager {
         return dataSetId+dataSetIdNext++;
     }
 
-    class CodeSystem{
-        private String effectiveDate;
-        private String codeSystemId;
+    static class CodeSystem{
+        private final String effectiveDate;
+        private final String codeSystemId;
 
         CodeSystem(String effectiveDate, String codeSystemId){
             this.codeSystemId = codeSystemId;

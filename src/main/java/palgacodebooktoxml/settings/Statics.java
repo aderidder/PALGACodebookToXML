@@ -25,11 +25,11 @@ import java.util.*;
  * Static parameters
  */
 public class Statics {
-    private static Map<String, String> languageMap = new HashMap<>();
-    private static Map<String, String> valueDomainTypeMap = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
-    private static Map<String, String> optionsInLangaugeMap = new HashMap<>();
-    private static List<String> exceptionCodelists = new ArrayList<>();
-    private static Map<String,String> typoMap = new HashMap<>();
+    private static final Map<String, String> languageMap = new HashMap<>();
+    private static final Map<String, String> valueDomainTypeMap = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
+    private static final Map<String, String> optionsInLangaugeMap = new HashMap<>();
+    private static final List<String> exceptionCodelists = new ArrayList<>();
+    private static final Map<String,String> typoMap = new HashMap<>();
 
     static{
         languageMap.put("nl", "nl-NL");

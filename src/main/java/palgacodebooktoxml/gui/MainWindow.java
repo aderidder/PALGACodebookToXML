@@ -35,9 +35,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -53,8 +51,8 @@ import palgacodebooktoxml.utils.TextAreaAppender;
  * Note to self: The XML uses only the descriptions (and the ontology code-things)
  * The Values column does still need to be present for the parser to work…
  */
-public class PALGACodebookToXML extends Application {
-    private static final Logger logger = LogManager.getLogger(PALGACodebookToXML.class.getName());
+public class MainWindow {
+    private static final Logger logger = LogManager.getLogger(MainWindow.class.getName());
     private static final ResourceManager resourceManager = new ResourceManager();
 
     private static final int sceneWidth = 800;
@@ -66,16 +64,11 @@ public class PALGACodebookToXML extends Application {
 
     private static final boolean debug = true;
 
-    public static void main(String ... args) {
-        launch(args);
-    }
-
     /**
      * Create the main GUI window
      * @param primaryStage the primary stage
      */
-    @Override
-    public void start(Stage primaryStage) {
+    public void createMainWindow(Stage primaryStage) {
         primaryStage.setTitle("PALGA Protocol Codebook to XML");
 
         // create the components

@@ -28,18 +28,18 @@ import java.util.*;
  * Representation of an Art-Decor Valueset
  */
 public class ArtDecorValueSet {
-    private String name;
-    private String displayName;
-    private String versionLabel;
-    private String effectiveDate;
+    private final String name;
+    private final String displayName;
+    private final String versionLabel;
+    private final String effectiveDate;
     private String statusCode = "draft";
 
     // normal concept options
-    private List<ConceptOption> conceptOptionList = new ArrayList<>();
+    private final List<ConceptOption> conceptOptionList = new ArrayList<>();
     // exception concept options
-    private List<ConceptOption> exceptionConceptOptionList = new ArrayList<>();
+    private final List<ConceptOption> exceptionConceptOptionList = new ArrayList<>();
     // description of the valueset in the languages
-    private List<LanguageValueSet> languageValueSetList = new ArrayList<>();
+    private final List<LanguageValueSet> languageValueSetList = new ArrayList<>();
 
     private String artdecorValueSetId;
 
@@ -249,9 +249,9 @@ public class ArtDecorValueSet {
     /**
      * stores the valueset's description in a language
      */
-    private class LanguageValueSet{
-        private String language;
-        private String description;
+    private static class LanguageValueSet{
+        private final String language;
+        private final String description;
 
         LanguageValueSet(String language, String description){
             this.description = description;
@@ -262,10 +262,10 @@ public class ArtDecorValueSet {
     /**
      * stores an option's designation (its language-specific description)
      */
-    private class Designation {
-        private String language;
-        private String type = "preferred";
-        private String displayName;
+    private static class Designation {
+        private final String language;
+        private final String type = "preferred";
+        private final String displayName;
 
         Designation(String language, String displayName){
             this.displayName = displayName;

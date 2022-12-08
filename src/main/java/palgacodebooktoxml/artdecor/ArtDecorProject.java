@@ -28,7 +28,7 @@ import java.util.Set;
  * Information necessary to generate the information within the Project tag
  */
 public class ArtDecorProject {
-    private RunParameters runParameters;
+    private final RunParameters runParameters;
 
     public ArtDecorProject(RunParameters runParameters){
         this.runParameters = runParameters;

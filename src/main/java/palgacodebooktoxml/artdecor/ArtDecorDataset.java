@@ -30,17 +30,17 @@ import java.util.TreeMap;
  * Representation of an ART-DECOR dataset (basically a codebook)
  */
 public class ArtDecorDataset {
-    private String effectiveDate;
-    private String statusCode;
+    private final String effectiveDate;
+    private final String statusCode;
 //    private int versionLabel;
-    private double versionLabel;
+    private final double versionLabel;
 
-    private String artdecorDatasetId;
+    private final String artdecorDatasetId;
 
-    private List<LanguageDataset> languageDatasetList = new ArrayList<>();
+    private final List<LanguageDataset> languageDatasetList = new ArrayList<>();
 
-    private Map<String, ArtDecorConcept> artDecorConcepMap = new TreeMap<>();
-    private List<ArtDecorConcept> topArtDecorConceptList = new ArrayList<>();
+    private final Map<String, ArtDecorConcept> artDecorConcepMap = new TreeMap<>();
+    private final List<ArtDecorConcept> topArtDecorConceptList = new ArrayList<>();
 
     /**
      * Create a new ART-DECOR dataset
@@ -123,9 +123,9 @@ public class ArtDecorDataset {
      * Class for keeping track of the name and description of the dataset in a language
      */
     private static class LanguageDataset{
-        private String language;
-        private String datasetName;
-        private String datasetDescription;
+        private final String language;
+        private final String datasetName;
+        private final String datasetDescription;
 
         LanguageDataset(String language, String datasetName, String datasetDescription){
             this.language = Statics.getArtDecorLanguage(language);

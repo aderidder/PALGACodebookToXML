@@ -32,28 +32,28 @@ import java.util.*;
 public class ArtDecorConcept {
     private static final Logger logger = LogManager.getLogger(ArtDecorConcept.class.getName());
 
-    private String statusCode;
-    private String effectiveDate;
+    private final String statusCode;
+    private final String effectiveDate;
     private String type = "item";
     // code, text, etc.
-    private String valueDomainType;
+    private final String valueDomainType;
 
     // date for references
     private String refEffectiveDate="";
 
-    private List<LanguageConcept> languageConceptList = new ArrayList<>();
+    private final List<LanguageConcept> languageConceptList = new ArrayList<>();
     private Map<String, String> propertyMap;
 
-    private String artdecorConceptId;
+    private final String artdecorConceptId;
     private String artdecorConceptListId="";
 
     private String xmlConceptTypeStatus="NEW";
     private String xmlConceptListTypeStatus="";
     private String xmlValueDomainTypeStatus="NEW";
 
-    private String conceptId;
+    private final String conceptId;
     private String parent="";
-    private List<ArtDecorConcept> children = new ArrayList<>();
+    private final List<ArtDecorConcept> children = new ArrayList<>();
 
     public ArtDecorConcept(String conceptId, String artdecorConceptId, String effectiveDate, String valueDomainType, String parent, String statusCode){
         this.conceptId = conceptId;

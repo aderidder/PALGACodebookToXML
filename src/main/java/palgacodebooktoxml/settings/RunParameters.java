@@ -26,19 +26,19 @@ import java.util.*;
  * Parameters for a run
  */
 public class RunParameters {
-    private String codebookDirectory;
-    private String projectId;
+    private final String codebookDirectory;
+    private final String projectId;
+    private final String experimental;
+    private final String statusCode;
     private String projectPrefix;
-    private String experimental;
-    private String statusCode;
     private String defaultLanguage;
 
-    private String authorString;
-    private String copyrightString;
+    private final String authorString;
+    private final String copyrightString;
     private String authorsStringFormatted;
     private String copyrightStringFormatted;
 
-    private Map<String, LanguageParameters> languageParametersMap = new HashMap<>();
+    private final Map<String, LanguageParameters> languageParametersMap = new HashMap<>();
 
     /**
      * Constructor for the runparameters
@@ -265,9 +265,9 @@ public class RunParameters {
     /**
      * class for storing language parameters (the project name and description in a specific language)
      */
-    class LanguageParameters{
-        private String projectName;
-        private String projectDescription;
+    static class LanguageParameters{
+        private final String projectName;
+        private final String projectDescription;
 
         /**
          * constructor
